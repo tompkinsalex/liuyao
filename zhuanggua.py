@@ -2,6 +2,7 @@
 
 from data.gua_table import (YAO_TO_BEN_LINE,YAO_TO_BIAN_LINE,TRIGRAM_BY_LINES,HEXAGRAM_BY_TRIGRAMS)
 from liuyao_roller import LiuYao
+from data.all_64gua_table import to_string
 
 class ZhuangGua(object):
     def __init__(self):
@@ -35,6 +36,12 @@ class ZhuangGua(object):
             f"本卦：{self.ben_gua}（上{self.ben_gua_up} 下{self.ben_gua_down}）\n"
             f"变卦：{self.bian_gua}（上{self.bian_gua_up} 下{self.bian_gua_down}）"
         )
+
+    def get_detail_info_of_ben_gua(self):
+        return to_string(self.ben_gua)
+    def get_detail_info_of_bian_gua(self):
+        return to_string(self.bian_gua)
+
 if __name__ == '__main__':
     query = input("请输入你要咨询的问题:")
     liuyao = LiuYao()
@@ -45,5 +52,6 @@ if __name__ == '__main__':
 
     print(f"你要咨询的问题是:{query}")
     print(f"本次卦象如下\n{gua}")
-
+    print(f"本卦详细信息\n{gua.get_detail_info_of_ben_gua()}")
+    print(f"变卦详细信息\n{gua.get_detail_info_of_bian_gua()}")
 

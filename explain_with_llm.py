@@ -2,7 +2,6 @@ import os
 
 from langchain.chat_models import init_chat_model
 from langchain_core.prompts import ChatPromptTemplate
-from sympy.physics.units import temperature
 
 deepseek_api_key = os.getenv["DEEPSEEK_API_KEY"]
 
